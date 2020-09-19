@@ -40,6 +40,12 @@ const config = {
       hash: true
     })
   ],
+
+  // OPTIONAL
+  watch: true, // Reload On File Change
+  devtool: 'source-map',   // Development Tools (Map Errors To Source File)
 };
+
+
 // Exports
 module.exports = config;
