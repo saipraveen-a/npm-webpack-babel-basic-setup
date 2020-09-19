@@ -15,6 +15,13 @@
 
     npm install babel-loader style-loader css-loader sass-loader html-loader
 
+
+**Building and starting server**
+
+npm run build
+
+npm start
+
 **References**
 
 https://medium.com/@jeffrey.allen.lewis/the-ultimate-2018-webpack-4-and-babel-setup-guide-npm-yarn-dependencies-compared-entry-points-866b577da6a
