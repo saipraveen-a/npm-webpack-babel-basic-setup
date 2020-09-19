@@ -1,5 +1,6 @@
 // Imports: Dependencies
 const path = require('path');
+const htmlWebpackPlugin = require('html-webpack-plugin')
 require("babel-register");
 
 // Webpack Configuration
@@ -12,7 +13,7 @@ const config = {
 
   // Output - PATH TO SEND BUNDLED/TRANSPILED CODE
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
   },
   // Loaders
@@ -32,7 +33,13 @@ const config = {
     ]
   },
   // Plugins
-  plugins: [],
+  plugins: [
+    new htmlWebpackPlugin({
+      template: './dist/index.html',
+      filename: 'index.html',
+      hash: true
+    })
+  ],
 };
 // Exports
 module.exports = config;
