@@ -1,0 +1,38 @@
+// Imports: Dependencies
+const path = require('path');
+require("babel-register");
+
+// Webpack Configuration
+const config = {
+  
+  // Entry - PATH TO INDEX.JS/INDEX.JSX (if using React) FILE
+  entry: {
+    index: 'src/index.js'
+  }, 
+
+  // Output - PATH TO SEND BUNDLED/TRANSPILED CODE
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  // Loaders
+  module: {
+    rules : [
+      // JavaScript/JSX Files
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      // CSS Files
+      {
+        test: /\.(css|sass)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      }
+    ]
+  },
+  // Plugins
+  plugins: [],
+};
+// Exports
+module.exports = config;
