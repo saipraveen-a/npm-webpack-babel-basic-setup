@@ -8,7 +8,7 @@ const config = {
   
   // Entry - PATH TO INDEX.JS/INDEX.JSX (if using React) FILE
   entry: {
-    index: 'src/index.js'
+    index: './src/index.js'
   }, 
 
   // Output - PATH TO SEND BUNDLED/TRANSPILED CODE
@@ -29,14 +29,19 @@ const config = {
       {
         test: /\.(css|sass)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      // HTML Files
+      {
+        test: /\.html$/,
+        use: ['html-loader']
       }
     ]
   },
   // Plugins
   plugins: [
     new htmlWebpackPlugin({
-      template: './dist/index.html',
-      filename: 'index.html',
+      template: './src/index.html',
+      filename: './index.html',
       hash: true
     })
   ],
