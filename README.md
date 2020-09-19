@@ -18,9 +18,9 @@
 
 **Building and starting server**
 
-npm run build
+    npm run build
 
-npm start
+    npm start
 
 **References**
 
